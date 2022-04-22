@@ -1,0 +1,37 @@
+.header{
+    width: 100%;
+    height: 90vh;
+}
+
+.home__main{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 0 2rem;
+    margin-top: 6rem;
+}
+
+.home__content{
+    width: 100%;
+    height: 300px;
+}
+
+.home__aside{
+    width: 100%;
+    height: 300px;
+    background-color: blue;
+}
+
+@media screen and (min-width: 700px) {
+    .home__main{
+        padding: 0 5rem;
+        display: flex;
+        gap: 2rem;
+    }
+    .home__content{
+        width: 70%;
+    }
+    .home__aside{
+        width: 30%;
+    }
+}

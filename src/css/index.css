@@ -1,0 +1,29 @@
+@import-normalize;
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Share:ital,wght@0,400;0,700;1,400&display=swap');
+:root{
+  --black: #232323;
+  --dark: #0F0E0E;
+  --teal: #045757;
+  --darkteal: #044343;
+  --white: #E4E4E4;
+
+  --fredoka: 'Fredoka', sans-serif;
+  --share: 'Share', cursive;;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000000;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

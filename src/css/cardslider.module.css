@@ -1,0 +1,31 @@
+.cardlsider{
+    width: 100%;
+    height: 250px;
+    background-color: brown;
+    position: relative;
+}
+
+.cardslider__scrollable{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+/* .cardlsider::-webkit-scrollbar{
+    display: none;
+} */
+
+.cardlsider__leftbtn{
+    position: absolute;
+    left: 0;
+}
+
+.cardlsider__rightbtn{
+    position: absolute;
+    right: 0;    
+}
