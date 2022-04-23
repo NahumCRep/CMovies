@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './components/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Home, Movies, TvShows, MovieDetails, Login } from './pages'
+import { Home, Movies, TvShows, MovieDetails, TvShowDetails, Login } from './pages'
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
         <Route path='/movies' element={<Movies />} />
         <Route path='/tvshows' element={<TvShows />} />
         <Route path='/movie/:id' element={<MovieDetails />} />
+        <Route path='/tvshow/:id' element={<TvShowDetails />} />
         <Route path='/login' element={<Login />} />
       </Routes>
     </BrowserRouter>
