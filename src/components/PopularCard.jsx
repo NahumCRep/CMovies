@@ -4,7 +4,6 @@ import { backdropURL } from '../config'
 
 
 const PopularCard = ({itemData, itemType}) => {
-  console.log('card', itemData)
   return (
     <article className={style.popularcard}>
         <img src={`${backdropURL}${itemData.backdrop_path}`} className={style.popularcard__img} /> 
