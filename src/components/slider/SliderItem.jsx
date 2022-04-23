@@ -10,7 +10,8 @@ const SliderItem = ({slide}) => {
         <div className={style.carousel__shadows}></div> 
          <img className={style.slider__img} src={`${backdropURL}${slide.backdrop_path}`} alt={slide.title} />
          <div className={style.slide__content}>
-             <p>{slide.title}</p>
+             <p className={style.slide__title}>{slide.title}</p>
+             <p className={style.slide__overview}>{slide.overview}</p>
              <button className={style.slide__content_button}><BiDetail size={25} /> details</button>
          </div>
     </div>
