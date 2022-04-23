@@ -5,15 +5,12 @@ import { TiStarburst } from 'react-icons/ti'
 import CardSlider from '../CardSlider'
 import PopularCard from '../PopularCard'
 import Spinner from '../Spinner'
-import useSWR from 'swr'
 
 const PopularSection = ({type, itemsLimit }) => {
     const [popularList, setPopularList] = useState([])
-    // const { data, error } = useSWR(['/tv/popular', '&page=2'], (url, limit) => get(url, limit).then(res => res.data), { suspense: true })
     useEffect(() => {
-        getListLimit(`/${type == 'movie' ? 'movie':'tv'}/popular`, 10)
+        getListLimit(`/trending/${type == 'movie' ? 'movie':'tv'}/week`, itemsLimit)
             .then(res => {
-                console.log('tv popular', res)
                 setPopularList(res)
             })
             .catch(error => console.error(error))
