@@ -9,6 +9,9 @@
     box-sizing: border-box;
     padding: 0 2rem;
     margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
 }
 
 .home__content{
@@ -19,6 +22,7 @@
 .home__movies{
     width: 100%;
     height: auto;
+    margin: 1rem 0;
 }
 
 .home__movies_title{
@@ -33,6 +37,7 @@
 .home__movies_title h1{
     font-family: var(--share);
     color: var(--white);
+    font-size: 2rem;
 }
 
 .home__movies_title::after{
@@ -40,20 +45,36 @@
     width: 90%;
     height: 100%;
     position: absolute;
+    z-index: -1;
     right: 0;
     background: linear-gradient(to left, var(--teal), transparent);  
 }
 
 .home__aside{
     width: 100%;
-    height: 300px;
-    background-color: blue;
+    height: max-content;
+    background-color: var(--dark);
+    padding: 1rem;
+}
+
+.home__aside h1{
+    font-family: var(--fredoka);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.home__aside h1 svg{
+    color: yellow;
 }
 
 @media screen and (min-width: 700px) {
     .home__main{
         padding: 0 5rem;
-        display: flex;
+        flex-direction: row;
         gap: 2rem;
     }
     .home__content{
@@ -61,5 +82,6 @@
     }
     .home__aside{
         width: 30%;
+        padding: 0.6rem 1rem;
     }
 }

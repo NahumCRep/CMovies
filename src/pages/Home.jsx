@@ -1,10 +1,12 @@
 import React, { useEffect, useState, startTransition } from 'react'
 import style from '../css/home.module.css'
-import Slider from '../components/slider/Slider'
 import { getListLimit, get } from '../api'
+import Slider from '../components/slider/Slider'
 import Spinner from '../components/Spinner'
 import PopularSection from '../components/sections/PopularSection'
 import GridLayout from '../components/layouts/GridLayout'
+import AsideSection from '../components/sections/AsideSection'
+import {BiCalendarStar} from 'react-icons/bi'
 
 const Home = () => {
   const [sliderMovies, setSliderMovies] = useState([])
@@ -52,7 +54,9 @@ const Home = () => {
           </section>
         </section>
         <aside className={style.home__aside}>
-          {/* daily trending */}
+          <h1><BiCalendarStar size={35} /> Day Trendings</h1>
+          <AsideSection type={'movie'} itemsLimit={3} />
+          <AsideSection type={'tv'} itemsLimit={3} />
         </aside>
       </main>
 

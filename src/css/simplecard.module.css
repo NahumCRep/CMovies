@@ -1,0 +1,35 @@
+.simplecard{
+    width: 100%;
+    min-height: 60px;
+    height: max-content;
+    background-color: #000000;
+    margin-top: 10px; 
+    padding: 10px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  
+}
+
+.simplecard__title{
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--fredoka);
+    font-size: 0.8rem;
+    transition: color 0.4s ease-in-out;
+}
+
+.simplecard__title:hover{
+    color: var(--teal);
+}
+
+.simplecard p{
+    font-family: var(--share);
+    color: var(--darkteal);
+    margin-top: 3px;
+}
+
+@media screen and (min-width:700px) {
+    .simplecard__title{
+        font-size: 0.9rem;
+    }
+}
