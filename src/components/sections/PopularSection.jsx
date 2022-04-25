@@ -2,8 +2,8 @@ import React, { useState, useEffect  } from 'react'
 import style from '../../css/popularsection.module.css'
 import { getListLimit } from '../../api'
 import { TiStarburst } from 'react-icons/ti'
-import CardSlider from '../CardSlider'
-import PopularCard from '../PopularCard'
+import CardSlider from '../cards/CardSlider'
+import PopularCard from '../cards/PopularCard'
 import Spinner from '../Spinner'
 
 const PopularSection = ({type, itemsLimit }) => {

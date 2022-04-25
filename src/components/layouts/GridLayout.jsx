@@ -1,6 +1,6 @@
 import React from 'react'
 import style from '../../css/gridlayout.module.css'
-import Card from '../Card'
+import Card from '../cards/Card'
 
 const GridLayout = ({dataList}) => {
   return (

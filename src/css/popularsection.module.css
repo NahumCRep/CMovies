@@ -1,5 +1,6 @@
 .popular_section h1{
     font-family: var(--share);
+    font-size: 2rem;
     color: var(--teal);
     display: flex;
     gap: 0.7rem;
