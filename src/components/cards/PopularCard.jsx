@@ -1,6 +1,6 @@
 import React from 'react'
-import style from '../css/popularcard.module.css'
-import { backdropURL } from '../config'
+import style from '../../css/popularcard.module.css'
+import { backdropURL } from '../../config'
 
 
 const PopularCard = ({itemData, itemType}) => {
