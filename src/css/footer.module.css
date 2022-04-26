@@ -61,7 +61,7 @@
 .footer__navigation ul a{
     text-decoration: none;
     font-family: var(--fredoka);
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: var(--white);
     transition: color 0.4s ease-in-out;
 }
@@ -71,7 +71,7 @@
     font-family: var(--fredoka);
     text-align: center;
     color: var(--white);
-    font-size: 0.9rem;
+    font-size: 0.7rem;
 }
 
 @media screen and (min-width: 700px){
@@ -85,6 +85,14 @@
 
     .footer__navigation ul a:hover{
         color: gray
+    }
+
+    .footer__navigation ul a{
+        font-size: 1.1rem;
+    }
+    
+    .footer__copy{
+        font-size: 0.9rem;
     }
     
 }
