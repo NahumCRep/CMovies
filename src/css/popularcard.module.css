@@ -40,11 +40,13 @@
     background: linear-gradient(to top, #000, transparent);
 }
 
-.popularcard__title p{
+.popularcard__title a{
+    text-decoration: none;
     font-family: var(--fredoka);
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--white);
     text-align: center;
+    margin-top: 5px;
 }
 
 @media screen and (min-width: 700px) {
