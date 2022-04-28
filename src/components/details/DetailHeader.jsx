@@ -11,7 +11,7 @@ const DetailHeader = ({movie}) => {
         <>
             <div className={style.detail__background}>
                 {
-                    movie
+                    movie.backdrop_path
                         ? (
                             movie.backdrop_path !== null
                             ? <img src={backdropURL + movie.backdrop_path} alt={movie.title} />
@@ -23,7 +23,7 @@ const DetailHeader = ({movie}) => {
             <div className={style.detail__info_container}>
                 <div className={style.detail__poster_div}>
                     {
-                        movie && (
+                        movie.poster_path && (
                             <MotionDiv classAsigned={style.detail__poster_img}>
                                 <img src={posterURL500 + movie.poster_path} alt={movie.title} />
                             </MotionDiv>
