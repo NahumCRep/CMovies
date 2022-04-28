@@ -4,31 +4,33 @@ import { getListLimit } from '../../api'
 import Spinner from '../Spinner'
 import SimpleCard from '../cards/SimpleCard'
 
-const AsideSection = ({type, itemsLimit}) => {
-    const [trendingList, setTrendingList] = useState([])
-    useEffect(() => {
-        getListLimit(`/trending/${type == 'movie' ? 'movie':'tv'}/week`, itemsLimit)
-            .then(res => {
-                setTrendingList(res)
-            })
-            .catch(error => console.error(error))
-    }, [])
+const AsideSection = ({ type, itemsLimit }) => {
+  const [trendingList, setTrendingList] = useState([])
+
+  useEffect(() => {
+    getListLimit(`/trending/${type == 'movie' ? 'movie' : 'tv'}/week`, itemsLimit)
+      .then(res => {
+        setTrendingList(res)
+      })
+      .catch(error => console.error(error))
+  }, [])
+
   return (
     <section className={style.aside__section}>
-        <h3 className={style.aside__title}>{type == "movie" ? 'Movies' : 'Tv Shows' }</h3>
-        <div className={style.aside__section_cards}>
-          {
-            trendingList 
+      <h3 className={style.aside__title}>{type == "movie" ? 'Movies' : 'Tv Shows'}</h3>
+      <div className={style.aside__section_cards}>
+        {
+          trendingList
             ? (
-                trendingList.map((trending)=>{
-                  return(
-                    <SimpleCard key={trending.id} cardType={type} cardData={trending} />
-                  )
-                })
+              trendingList.map((trending) => {
+                return (
+                  <SimpleCard key={trending.id} cardType={type} cardData={trending} />
+                )
+              })
             )
             : <Spinner />
-          }
-        </div>
+        }
+      </div>
     </section>
   )
 }
