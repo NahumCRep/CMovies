@@ -5,6 +5,8 @@ import { FaUserCircle } from 'react-icons/fa'
 const ReviewBox = ({ review }) => {
     const [validateURLAvatar, setValidateURLAvatar] = useState(false)
     const [reviewDate, setReviewDate] = useState('')
+    const [islargeContent, setIsLargeContent] = useState(false)
+    const [showFullContent, setShowFullContent] = useState(false)
 
     const formatReviewDate = () => {
         const revDate = new Date(review.created_at)
@@ -15,12 +17,18 @@ const ReviewBox = ({ review }) => {
     }
 
     useEffect(() => {
+        console.log('contenido tamanio',)
         const regex = new RegExp('(https:\/\/www\.gravatar\.com\/avatar\/)([a-zA-Z0-9-_])+\.(?:jpg|gif|png)')
         if (review.author_details.avatar_path) {
             const validateRegex = regex.test((review.author_details.avatar_path).slice(1))
             if (validateRegex) setValidateURLAvatar(true)
         }
         formatReviewDate()
+
+        if(review.content.length > 600){
+            setIsLargeContent(true)
+            setShowFullContent(true)    
+        }
     }, [])
 
     return (
@@ -34,9 +42,21 @@ const ReviewBox = ({ review }) => {
                     }
                     <p>{review.author_details.username}</p>
                 </div>
-                <p>{reviewDate}</p>
+                <p className={style.review__box_details_date}>{reviewDate}</p>
             </div>
-            <p>{review.content}</p>
+            <div className={style.review__box_content_div}>
+                <p className={`
+                        ${style.review__box_content}  
+                        ${showFullContent ? style.content_truncate : ''}
+                    `}>{review.content}</p>
+            </div>
+            {
+                islargeContent && (
+                    <button onClick={() => setShowFullContent(!showFullContent)} className={style.review__read_more}>
+                        {showFullContent ? "read more..." : "read less" }
+                    </button>
+                )
+            }
         </article>
     )
 }
