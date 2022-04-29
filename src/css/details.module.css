@@ -254,4 +254,9 @@
         padding: 0 1rem;
         cursor: pointer;
     }
+
+    .detail__reviews_n_related{
+        flex-direction: row;
+        padding: 0 5rem;
+    }
 }

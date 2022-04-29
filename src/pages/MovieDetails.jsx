@@ -3,6 +3,7 @@ import style from '../css/details.module.css'
 import DetailHeader from '../components/details/DetailHeader'
 import YoutubeEmbed from '../components/details/YoutubeEmbed'
 import Reviews from '../components/details/Reviews'
+import Similars from '../components/details/Similars'
 import { useParams } from 'react-router-dom'
 import { get } from '../api'
 
@@ -54,6 +55,7 @@ const MovieDetails = () => {
             </div>
             <div className={style.detail__reviews_n_related}>
               <Reviews movieID={id} />
+              <Similars showID={id} type={'movie'} itemsLimit={'5'} />
             </div>
             
           </>
