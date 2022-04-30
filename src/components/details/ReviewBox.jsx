@@ -17,7 +17,6 @@ const ReviewBox = ({ review }) => {
     }
 
     useEffect(() => {
-        console.log('contenido tamanio',)
         const regex = new RegExp('(https:\/\/www\.gravatar\.com\/avatar\/)([a-zA-Z0-9-_])+\.(?:jpg|gif|png)')
         if (review.author_details.avatar_path) {
             const validateRegex = regex.test((review.author_details.avatar_path).slice(1))
