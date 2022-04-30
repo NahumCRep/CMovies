@@ -104,6 +104,13 @@
     cursor: pointer;
 }
 
+.reviews__list_message{
+    font-family: var(--fredoka);
+    color: var(--white);
+    width: 100%;
+    text-align: center;
+}
+
 @media screen and (min-width: 700px) {
     .reviews__container {
         width: 70%;
