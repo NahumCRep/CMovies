@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import style from '../css/details.module.css'
 import DetailsPage from '../components/layouts/DetailsPage'
-import YoutubeEmbed from '../components/details/YoutubeEmbed'
+import SeasonsVideoSection from '../components/details/SeasonsVideoSection'
 import { useParams } from 'react-router-dom'
 import { get } from '../api'
 
@@ -10,7 +9,7 @@ const TvShowDetails = () => {
   const { id } = useParams()
 
   useEffect(() => {
-    get(`/tv/${id}`)
+    get(`/tv/${id}`,'&append_to_response=credits')
       .then(res => {
         console.log(res)
         setTvShow(res.data)
@@ -19,18 +18,9 @@ const TvShowDetails = () => {
   }, [id])
 
   return (
-    <section className={style.detail__section}>
-      {
-        tvshow && (
-          <>
-            <DetailsPage show={tvshow} showID={id} showType={"tv"} >
-             
-            </DetailsPage>
-          </>
-        )
-      }
-
-    </section>
+    <DetailsPage show={tvshow} showID={id} showType={"tv"} >
+      {tvshow && <SeasonsVideoSection tvID={id} tvSeasons={tvshow.seasons} />}
+    </DetailsPage>
   )
 }
 

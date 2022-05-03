@@ -1,151 +1,3 @@
-.detail__section{
-    width: 100%;
-    height: auto;
-    min-height: 100vh;
-    position: relative;
-}
-
-.detail__background{
-    position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-}
-
-.detail__background::after{
-    content: '';
-    width: 100%;
-    height: 50%;
-    position: absolute;
-    z-index: 200;
-    bottom: 0;
-    background-color: #000000;
-    background: linear-gradient(to top, #000000, transparent);
-}
-
-.detail__background img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.3;
-    position: absolute;
-    z-index: 100;
-}
-
-.detail__info_container{
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    padding: 0 2rem;
-}
-
-.detail__poster_div{
-    width: 100%;
-    height: 180px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
-.detail__poster_img{
-    width: 100%;
-    max-width: 400px;
-    height: 400px;
-    position: absolute;
-    top: -250px;
-    z-index: 400;
-}
-
-.detail__poster_img img{
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-}
-
-.detail__info{
-    width: 100%;
-}
-
-/* ................................................ */
-/* Movie Main Info Details */
-
-.detail__info_title{
-    font-family: var(--share);
-    font-size: 1.5rem;
-    color: var(--white);
-}
-
-.detail__info_overview,  
-.detail__info_genres, 
-.detail__info_block{
-    font-family: var(--fredoka);
-    color: var(--white);
-    text-align: justify;
-    /* margin-top: 10px; */
-}
-
-.detail__info_overview{
-    font-size: 0.8rem;
-    margin-top: 10px;  
-}
-
-.detail__info_characteristics{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.detail__info_block{
-    display: flex;
-    align-items: center; 
-    gap: 10px;
-}
-
-.detail__info_block p:first-child{
-    color: var(--teal);
-    font-size: 0.9rem;
-}
-
-.detail__info_block p:nth-child(2){
-    font-size: 0.8rem;
-}
-
-.detail__info_genres{
-    font-size: 0.8rem;
-    text-align: left;
-    line-height: 1.5;
-}
-
-.detail__info_genres span{
-    font-size: 0.9rem;
-    color: var(--teal);
-    margin-right: 10px;
-}
-
-.detail__info_button{
-    width: 100%;
-    height: 40px;
-    margin-top: 25px;
-    outline: none;
-    border: none;
-    color: var(--white);
-    background-color: var(--dark);
-}
-
-.detail__info_button_link{
-    width: 100;
-    height: 100%;
-    text-decoration: none;
-    font-family: var(--fredoka);
-    font-size: 1rem;
-    color: var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-}
 
 /* ................................................ */
 /* Movie Page Video Section */
@@ -167,10 +19,10 @@
     margin-bottom: 10px;
 }
 
-.detail__video_select{
+.detail__video_select, .detail__message{
     font-family: var(--fredoka);
-    width: 90%;
-    height: 60%;
+    width: 80%;
+    height: 40px;
     font-size: 0.7rem;
     color: var(--white);
     outline: none;
@@ -179,66 +31,50 @@
     padding: 0 1rem;
 }
 
-.detail__reviews_n_related{
+/* season changes */
+.detail__video_season_div{
     width: 100%;
     height: auto;
-    padding: 0 2rem;
+    background-color: var(--black);
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    margin-top: 3rem;
+    gap: 1rem;
+    margin-bottom: 10px;
+}
+
+.detail__video_season_selectors{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail__video_season_info{
+    width: 100%;
+    min-height: 200px;
+    padding: 0 0.5rem 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    font-family: var(--fredoka);
+    font-size: 0.8rem;
+    color: var(--white);
+}
+
+.detail__video_season_info img{
+    width: 55%;
+    height: 250px;
+}
+
+.detail__message{
+    display: flex;
+    align-items: center;
+}
+.season__overview{
+    text-align: justify;
 }
 
 @media screen and (min-width: 850px) {
-    .detail__info_container{
-        flex-direction: row;
-        padding: 0 5rem;
-    }
-    
-    .detail__poster_div{
-        width: 40%;
-        min-width: 450px;
-        height: 400px;
-        justify-content: flex-start;
-    }
-
-    .detail__poster_img{
-        width: 400px;
-        height: 600px;
-    }
-
-    .detail__info{
-        width: 60%;
-    }
-
-    .detail__info_title{
-        font-size: 2rem;
-    }
-    
-    .detail__info_overview, 
-    .detail__info_block p:nth-child(2),
-    .detail__info_genres{
-        font-size: 0.9rem;
-    }
-
-    .detail__info_block p:first-child,
-    .detail__info_genres span{
-        font-size: 1rem;
-    }
-
-    .detail__info_button{
-        height: 60px;
-    }
-    
-    .detail__info_button_link{
-        font-size: 1.2rem;
-        transition: all 0.5s ease-in-out;
-    }
-
-    .detail__info_button_link:hover{
-        background-color: var(--black);
-    }
-
     .detail__video_section{
         padding: 1rem 5rem;
     }
@@ -254,9 +90,34 @@
         padding: 0 1rem;
         cursor: pointer;
     }
+    /* seasons */
 
-    .detail__reviews_n_related{
+    .detail__video_season_div{
         flex-direction: row;
-        padding: 0 5rem;
+        align-items: center;
+    }
+    
+    .detail__video_season_info{
+        width: 60%;
+        padding: 1rem;
+        min-height: 200px;
+        font-size: 1rem;
+        flex-direction: row;
+        background-color: #000;
+        /* justify-content: center; */
+    }
+    
+    .detail__video_season_info img{
+        width: 200px;
+        height: 300px;
+    }
+
+    .detail__video_season_selectors{
+        width: 40%;
+        padding: 0 1rem;
+    }
+
+    .detail__message{
+        width: 100%;
     }
 }
