@@ -26,7 +26,6 @@ const Reviews = ({ showID, showType }) => {
         let queryType = showType == 'movie' ? 'movie' : 'tv'
         get(`/${queryType}/${showID}/reviews`)
             .then(res => {
-                console.log('revs', res)
                 if(res.data.results.length == 0) setIsEmpty(true)
                 setAllReviews(res.data.results)
                 setIsLoading(false)

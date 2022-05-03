@@ -28,7 +28,7 @@
 }
 
 .simplecard p{
-    font-family: var(--share);
+    font-family: var(--fredoka);
     color: var(--darkteal);
     margin-top: 3px;
 }

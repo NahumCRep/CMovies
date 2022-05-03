@@ -10,7 +10,6 @@ const Similars = ({showID, type, itemsLimit}) => {
   useEffect(()=>{
     getListLimit(`/${type == 'movie' ? 'movie': 'tv' }/${showID}/similar`, itemsLimit)
     .then(res => {
-        console.log('similars', res)
         setSimilarList(res)
     })
     .catch(error => console.log(error))
@@ -26,7 +25,7 @@ const Similars = ({showID, type, itemsLimit}) => {
           ? (
             similarList.map((similar)=>{
                 return(
-                  <SimpleCard cardType={type} cardData={similar} />
+                  <SimpleCard key={similar.id} cardType={type} cardData={similar} />
                 )
             })
           )

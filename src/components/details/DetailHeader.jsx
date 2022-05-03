@@ -1,5 +1,4 @@
 import React from 'react'
-// import style from '../../css/details.module.css'
 import style from '../../css/details/detailheader.module.css'
 import Spinner from '../Spinner'
 import MotionDiv from '../motions/MotionDiv'
