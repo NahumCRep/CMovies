@@ -5,7 +5,7 @@ import Slider from '../components/slider/Slider'
 import Spinner from '../components/Spinner'
 import PopularSection from '../components/sections/PopularSection'
 import GridLayout from '../components/layouts/GridLayout'
-import AsideSection from '../components/sections/AsideSection'
+import DayTrending from '../components/sections/DayTrending'
 import {BiCalendarStar} from 'react-icons/bi'
 
 const Home = () => {
@@ -55,8 +55,8 @@ const Home = () => {
         </section>
         <aside className={style.home__aside}>
           <h1><BiCalendarStar size={35} /> Day Trendings</h1>
-          <AsideSection type={'movie'} itemsLimit={3} />
-          <AsideSection type={'tv'} itemsLimit={3} />
+          <DayTrending type={'movie'} itemsLimit={3} />
+          <DayTrending type={'tv'} itemsLimit={3} />
         </aside>
       </main>
 
