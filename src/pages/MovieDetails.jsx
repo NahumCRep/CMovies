@@ -13,7 +13,7 @@ const MovieDetails = () => {
   const { id } = useParams()
 
   useEffect(() => {
-    get(`/movie/${id}`, '&append_to_response=videos')
+    get(`/movie/${id}`, '&append_to_response=videos,credits')
       .then(res => {
         console.log(res.data)
         setMovie(res.data)

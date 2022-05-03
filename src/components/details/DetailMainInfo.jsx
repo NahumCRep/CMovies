@@ -1,5 +1,4 @@
 import React from 'react'
-// import style from '../../css/details.module.css'
 import style from '../../css/details/detail_main_info.module.css'
 import Duration from './Duration'
 import MotionH1 from '../motions/MotionH1'
@@ -24,18 +23,18 @@ const DetailMainInfo = ({ info, type }) => {
           type === 'tv' && (
             <div className={style.detail__info_seasons}>
               <div className={style.detail__info_block}>
-                <p>seasons:</p>
+                <p>Seasons:</p>
                 <p>{info.number_of_seasons}</p>
               </div>
               <div className={style.detail__info_block}>
-                <p>total episodes:</p>
+                <p>Total episodes:</p>
                 <p>{info.number_of_episodes}</p>
               </div>
             </div>
           )
         }
         <div className={style.detail__info_block}>
-          <p>{type == 'movie' ? 'duration:' : 'espisode duration:'}</p>
+          <p>{type == 'movie' ? 'Duration:' : 'Espisode duration:'}</p>
           {
             info.episode_run_time
               ? <Duration timeInMinutes={info.episode_run_time[0]} />
@@ -43,8 +42,8 @@ const DetailMainInfo = ({ info, type }) => {
           }
         </div>
         {info.genres && (
-          <p className={style.detail__info_genres}>
-            <span>genres:</span>
+          <p className={style.detail__info_list}>
+            <span>Genres:</span>
             {
               info.genres.map((genre, i) => {
                 return (
@@ -55,18 +54,30 @@ const DetailMainInfo = ({ info, type }) => {
           </p>
         )}
         <div className={style.detail__info_block}>
-          <p>rate:</p>
+          <p>Rate:</p>
           <p>{`${info.vote_average}  / 10`}</p>
         </div>
         <div className={style.detail__info_block}>
-          <p>year:</p>
+          <p>Year:</p>
           {
             type == 'movie'
               ? <p>{new Date(info.release_date).getFullYear()}</p>
               : <p>{new Date(info.first_air_date).getFullYear()}</p>
           }
-
         </div>
+        {
+          info.credits && (
+            <p className={style.detail__info_list}>
+              <span>Cast:</span>
+              {
+                info.credits.cast.slice(0,6).map((castMember, i) => {
+                  return i == 0 ? castMember.name : `, ${castMember.name}`
+                })
+              }
+            </p>
+          )
+        }
+
       </MotionDiv>
       <MotionButton classAsigned={style.detail__info_button} delayValue={'3'} >
         <a href={info.homepage} className={style.detail__info_button_link} target='_blank'>

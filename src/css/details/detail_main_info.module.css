@@ -10,7 +10,7 @@
 }
 
 .detail__info_overview,  
-.detail__info_genres, 
+.detail__info_list, 
 .detail__info_block{
     font-family: var(--fredoka);
     color: var(--white);
@@ -44,13 +44,13 @@
     font-size: 0.8rem;
 }
 
-.detail__info_genres{
+.detail__info_list{
     font-size: 0.8rem;
     text-align: left;
     line-height: 1.5;
 }
 
-.detail__info_genres span{
+.detail__info_list span{
     font-size: 0.9rem;
     color: var(--teal);
     margin-right: 10px;
@@ -86,12 +86,12 @@
     
     .detail__info_overview, 
     .detail__info_block p:nth-child(2),
-    .detail__info_genres{
+    .detail__info_list{
         font-size: 0.9rem;
     }
 
     .detail__info_block p:first-child,
-    .detail__info_genres span{
+    .detail__info_list span{
         font-size: 1rem;
     }
 
