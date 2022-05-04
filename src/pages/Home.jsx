@@ -1,9 +1,9 @@
 import React, { useEffect, useState, startTransition } from 'react'
-import style from '../css/home.module.css'
+import style from '../css/pages/home.module.css'
 import { getListLimit, get } from '../api'
 import Slider from '../components/slider/Slider'
 import Spinner from '../components/Spinner'
-import PopularSection from '../components/sections/PopularSection'
+import SmallSliderSection from '../components/smallSlider/SmallSliderSection'
 import GridLayout from '../components/layouts/GridLayout'
 import DayTrending from '../components/sections/DayTrending'
 import {BiCalendarStar} from 'react-icons/bi'
@@ -40,8 +40,8 @@ const Home = () => {
       </header>
       <main className={style.home__main}>
         <section className={style.home__content}>
-          <PopularSection type={'tv'} itemsLimit={10} />
-          <PopularSection type={'movie'} itemsLimit={10} />
+          <SmallSliderSection type={'tv'} tag={'populars'} itemsLimit={10} />
+          <SmallSliderSection type={'movie'} tag={'populars'} itemsLimit={10} />
           <section className={style.home__movies}>
             <div className={style.home__movies_title}>
                 <h1>Latest Movies</h1>

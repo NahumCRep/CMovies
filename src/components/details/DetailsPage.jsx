@@ -1,9 +1,8 @@
 import React from 'react'
-// import style from '../../css/details.module.css'
-import style from '../../css/details/detailspage.module.css'
-import DetailHeader from '../details/DetailHeader'
-import Reviews from '../details/Reviews'
-import Similars from '../details/Similars'
+import style from '../../css/details/details_page.module.css'
+import DetailHeader from './DetailHeader'
+import Reviews from '../reviews/Reviews'
+import Similars from '../sections/Similars'
 
 const DetailsPage = ({ children, show, showType, showID }) => {
     return (

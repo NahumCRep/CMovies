@@ -1,6 +1,6 @@
 import React from 'react'
 import Spinner from '../Spinner'
-import style from '../../css/youtube.module.css'
+import style from '../../css/videos.module.css'
 import PropType from 'prop-types'
 
 const YoutubeEmbed = ({ videoKey, title }) => {

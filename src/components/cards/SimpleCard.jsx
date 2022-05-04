@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
-import style from '../../css/simplecard.module.css'
+import style from '../../css/cards/simple_card.module.css'
 
 const SimpleCard = ({cardType, cardData}) => {
   const navigate = useNavigate()
@@ -14,7 +14,7 @@ const SimpleCard = ({cardType, cardData}) => {
         <button className={style.simplecard__title} onClick={() => goToPage()}>
             {cardType == 'movie' ? cardData.title : cardData.name}
         </button>
-        <p>Rate {cardData.vote_average}</p>
+        <p>Rate {cardData.vote_average.toFixed(1)}</p>
     </div>
   )
 }

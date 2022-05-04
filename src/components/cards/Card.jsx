@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import style from '../../css/card.module.css'
-import { posterURL342, posterURL500, posterURL780 } from '../../config'
+import style from '../../css/cards/card.module.css'
+import { posterURL500 } from '../../config'
 import { FaStar } from 'react-icons/fa'
 
 const Card = ({ cardData }) => {

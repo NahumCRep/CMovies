@@ -1,8 +1,14 @@
 import React from 'react'
+import GridLayout from '../components/layouts/GridLayout'
 
 const Movies = () => {
   return (
-    <div>Movies</div>
+    <section>
+        <div></div>
+        <div>
+
+        </div>
+    </section>
   )
 }
 

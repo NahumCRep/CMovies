@@ -1,5 +1,5 @@
 import React from 'react'
-import style from '../../css/details/detailheader.module.css'
+import style from '../../css/details/detail_header.module.css'
 import Spinner from '../Spinner'
 import MotionDiv from '../motions/MotionDiv'
 import DetailMainInfo from './DetailMainInfo'

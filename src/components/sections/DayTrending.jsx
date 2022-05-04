@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import style from '../../css/daytrending.module.css'
+import style from '../../css/sections/day_trending.module.css'
 import { getListLimit } from '../../api'
 import Spinner from '../Spinner'
 import SimpleCard from '../cards/SimpleCard'

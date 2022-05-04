@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import style from '../../css/details.module.css'
+import style from '../../css/videos.module.css'
 import SelectBlock from './SelectBlock'
 import Spinner from '../Spinner'
 import YoutubeEmbed from './YoutubeEmbed'

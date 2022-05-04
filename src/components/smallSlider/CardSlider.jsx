@@ -1,5 +1,5 @@
 import React, {useRef} from 'react'
-import style from '../../css/cardslider.module.css'
+import style from '../../css/smallslider/card_slider.module.css'
 import {MdArrowForwardIos, MdArrowBackIos} from 'react-icons/md'
 
 const CardSlider = ({ children }) => {

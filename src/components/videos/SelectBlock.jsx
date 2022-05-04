@@ -1,5 +1,5 @@
 import React from 'react'
-import style from '../../css/details/select_block.module.css'
+import style from '../../css/videos.module.css'
 
 const SelectBlock = ({title, children}) => {
     return (

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import DetailsPage from '../components/layouts/DetailsPage'
-import SeasonsVideoSection from '../components/details/SeasonsVideoSection'
+import DetailsPage from '../components/details/DetailsPage'
+import SeasonsVideoSection from '../components/videos/SeasonsVideoSection'
 import { useParams } from 'react-router-dom'
 import { get } from '../api'
 

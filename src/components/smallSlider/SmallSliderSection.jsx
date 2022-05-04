@@ -1,12 +1,12 @@
 import React, { useState, useEffect  } from 'react'
-import style from '../../css/popularsection.module.css'
+import style from '../../css/smallslider/small_slider_section.module.css'
 import { getListLimit } from '../../api'
 import { TiStarburst } from 'react-icons/ti'
-import CardSlider from '../cards/CardSlider'
-import PopularCard from '../cards/PopularCard'
+import CardSlider from './CardSlider'
+import PopularCard from './SliderCard'
 import Spinner from '../Spinner'
 
-const PopularSection = ({type, itemsLimit }) => {
+const SmallSliderSection = ({type, tag, itemsLimit }) => {
     const [popularList, setPopularList] = useState([])
     useEffect(() => {
         getListLimit(`/trending/${type == 'movie' ? 'movie':'tv'}/week`, itemsLimit)
@@ -18,7 +18,7 @@ const PopularSection = ({type, itemsLimit }) => {
 
     return (
         <section className={style.popular_section}>
-            <h1>{type == 'movie' ? 'Movies' : 'Tv Shows'} <span><TiStarburst /> populars</span></h1>
+            <h1>{type == 'movie' ? 'Movies' : 'Tv Shows'} <span><TiStarburst /> {tag}</span></h1>
             <CardSlider>    
                 {
                     popularList 
@@ -36,4 +36,4 @@ const PopularSection = ({type, itemsLimit }) => {
     )
 }
 
-export default PopularSection
+export default SmallSliderSection

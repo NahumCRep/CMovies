@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import style from '../../css/similars.module.css'
+import style from '../../css/sections/similars.module.css'
 import SimpleCard from '../cards/SimpleCard'
 import Spinner from '../Spinner'
 import { getListLimit } from '../../api'

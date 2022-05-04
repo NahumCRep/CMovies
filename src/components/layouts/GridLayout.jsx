@@ -1,5 +1,5 @@
 import React from 'react'
-import style from '../../css/gridlayout.module.css'
+import style from '../../css/layouts/grid_layout.module.css'
 import Card from '../cards/Card'
 
 const GridLayout = ({dataList}) => {

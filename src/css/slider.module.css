@@ -72,6 +72,7 @@
     padding-left: 10px;
 }
 
+/* '''''''''''''''''''''''''''''''''''''''' */
 /* Slide Item */
 .slide {
     min-width: 100%;
@@ -116,7 +117,6 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    /* text-shadow: 5px 5px 5px #000; */
 }
 
 .slide__content_button {

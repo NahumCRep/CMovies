@@ -1,9 +1,9 @@
 import React from 'react'
-import style from '../../css/popularcard.module.css'
+import style from '../../css/smallslider/slider_card.module.css'
 import { backdropURL } from '../../config'
 import { Link } from 'react-router-dom'
 
-const PopularCard = ({itemData, itemType}) => {
+const SliderCard = ({itemData, itemType}) => {
   return (
     <article className={style.popularcard}>
         <img src={`${backdropURL}${itemData.backdrop_path}`} className={style.popularcard__img} /> 
@@ -16,4 +16,4 @@ const PopularCard = ({itemData, itemType}) => {
   )
 }
 
-export default PopularCard
+export default SliderCard
