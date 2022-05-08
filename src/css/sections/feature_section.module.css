@@ -1,0 +1,15 @@
+.feature__container{
+    width: 100%;
+    height: max-content;
+    background-color: var(--black);
+    padding: 0.5rem;
+}
+
+.feature__title{
+    font-size: var(--share);
+    color: var(--white);
+}
+
+@media screen and (min-width: 700px){
+ 
+}
