@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
-// import style from '../css/details.module.css'
-import style from '../css/details/movie_details.module.css'
+import style from '../css/videos.module.css'
 import DetailsPage from '../components/details/DetailsPage'
 import YoutubeEmbed from '../components/videos/YoutubeEmbed'
 import { useParams } from 'react-router-dom'

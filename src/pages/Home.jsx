@@ -23,7 +23,6 @@ const Home = () => {
     startTransition(() => {
       get('movie/popular')
         .then(res => {
-          console.log('all movies', res)
           setAllMovies(res.data.results)
         })
         .catch(error => console.error(error))
@@ -48,7 +47,7 @@ const Home = () => {
             </div>
             {
               allmovies?.length > 0
-                ? <GridLayout dataList={allmovies} />
+                ? <GridLayout dataList={allmovies} listType={'movie'} />
                 : <Spinner />
             }
           </section>
