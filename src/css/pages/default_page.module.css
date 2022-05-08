@@ -1,0 +1,49 @@
+.page__main_section{
+    margin: 0;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    padding: 7rem 2rem 2rem 2rem;
+}
+
+.page__content{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.page__list{
+    width: 100%;
+    height: auto;
+    margin: 1rem 0;
+}
+
+.page__featured_section{
+    width: 100%;
+}
+
+
+@media screen and (min-width: 700px) {
+    .page__main_section{
+        padding: 7rem 5rem 2rem 5rem;
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .page__content{
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .page__list{
+        width: 70%;
+    }
+
+    .page__featured_section{
+        width: 30%;
+        padding: 0 0.5rem;
+    }
+
+}
