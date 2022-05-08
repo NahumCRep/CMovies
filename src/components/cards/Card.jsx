@@ -3,13 +3,18 @@ import { Link } from 'react-router-dom'
 import style from '../../css/cards/card.module.css'
 import { posterURL500 } from '../../config'
 import { FaStar } from 'react-icons/fa'
+import defaultImage from '../../assets/images/defaultBackdrop.jpg'
 
-const Card = ({ cardData }) => {
+const Card = ({ cardData, cardType }) => {
   return (
     <div className={style.card}>
-      <Link to={`/movie/${cardData.id}`}>
+      <Link to={`/${cardType == 'movie' ? 'movie':'tvshow'}/${cardData.id}`}>
         <figure>
-          <img src={`${posterURL500}${cardData.poster_path}`} alt={cardData.title} />
+          {
+            cardData.poster_path
+              ? <img src={`${posterURL500}${cardData.poster_path}`} alt={cardData.title ? cardData.title : cardData.name} />
+              : <img src={defaultImage} alt={cardData.title ? cardData.title : cardData.name} />
+          }
           <div className={style.card__rate}>
             <div className={style.card__rate_tag}>
               <FaStar />
@@ -20,7 +25,7 @@ const Card = ({ cardData }) => {
         </figure>
       </Link>
       <div className={style.cardtitle__container}>
-        <p>{cardData.title}</p>
+        <p>{cardData.title ? cardData.title : cardData.name}</p>
       </div>
     </div>
   )
