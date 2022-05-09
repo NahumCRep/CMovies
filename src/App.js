@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Home, Movies, TvShows, MovieDetails, TvShowDetails, Login } from './pages'
+import { Home, Movies, TvShows, MovieDetails, TvShowDetails, NotFound } from './pages'
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
           <Route path='/tvshows/page/:page' element={<TvShows />} />
           <Route path='/movie/:id' element={<MovieDetails />} />
           <Route path='/tvshow/:id' element={<TvShowDetails />} />
-          <Route path='/login' element={<Login />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />
       </ScrollToTop>
