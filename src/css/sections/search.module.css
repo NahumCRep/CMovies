@@ -27,6 +27,32 @@
     color: var(--teal);
     outline: none;
     border: none;
-    /* border-radius: 50%; */
     background-color: var(--dark);
+    cursor: pointer;
+}
+
+@keyframes scaled {
+    0%{ transform: scale(0.7); }
+    50%{ transform: scale(1.4); }
+    100%{ transform: scale(1); }
+}
+
+@media screen and (min-width: 700px){
+    .search__container{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        justify-content: space-between;
+    }
+    .search__input_div{
+        width: 60%;
+    }
+
+    .search__btn > svg{
+        transition: all 0.3s ease-in-out;
+    }
+
+    .search__btn:hover > svg{
+        animation: scaled linear 0.5s;
+    }
 }

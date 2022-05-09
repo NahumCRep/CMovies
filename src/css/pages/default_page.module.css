@@ -17,13 +17,13 @@
 .page__list{
     width: 100%;
     height: auto;
-    margin: 1rem 0;
+    margin: 2rem 0;
 }
 
 .page__featured_section{
     width: 100%;
+    margin: 2rem 0;
 }
-
 
 @media screen and (min-width: 700px) {
     .page__main_section{
@@ -43,7 +43,7 @@
 
     .page__featured_section{
         width: 30%;
-        padding: 0 0.5rem;
+        padding-left: 0.5rem;
     }
 
 }
