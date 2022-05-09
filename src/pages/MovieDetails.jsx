@@ -32,20 +32,24 @@ const MovieDetails = () => {
 
   return (
     <DetailsPage show={movie} showID={id} showType={"movie"} >
-      <div className={style.detail__video_section}>
-        <div className={style.detail__video_div}>
-          <select className={style.detail__video_select} onChange={handleVideoChange}>
-            {
-              movie?.videos?.results.map((video) => {
-                return (
-                  <option key={video.id} value={video.key} >{video.name}</option>
-                )
-              })
-            }
-          </select>
-        </div>
-        <YoutubeEmbed videoKey={videoID} title={videoTitle} />
-      </div>
+      {
+        movie?.videos?.results.length > 0 && (
+          <div className={style.detail__video_section}>
+            <div className={style.detail__video_div}>
+              <select className={style.detail__video_select} onChange={handleVideoChange}>
+                {
+                  movie?.videos?.results.map((video) => {
+                    return (
+                      <option key={video.id} value={video.key} >{video.name}</option>
+                    )
+                  })
+                }
+              </select>
+            </div>
+            <YoutubeEmbed videoKey={videoID} title={videoTitle} />
+          </div>
+        )
+      }
     </DetailsPage>
   )
 }
