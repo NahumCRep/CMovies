@@ -7,12 +7,10 @@ const CardSlider = ({ children }) => {
 
   const scrollToLeft = () => {
     cardSliderRef.current.scrollLeft -= (cardSliderRef.current.children[0].offsetWidth + 10)
-    // cardSliderRef.current.scrollLeft += scrollValue
   }
 
   const scrollToRight = () => {
     cardSliderRef.current.scrollLeft += (cardSliderRef.current.children[0].offsetWidth + 10)
-    // cardSliderRef.current.scrollLeft += scrollValue
   }
 
 

@@ -3,7 +3,6 @@ import style from '../../css/sections/categories.module.css'
 import { useNavigate } from 'react-router-dom'
 import { get } from '../../api'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaAngleDown, FaPlus } from 'react-icons/fa'
 
 const Categories = ({ categoryType }) => {
   const [categories, setCategories] = useState([])
@@ -13,7 +12,6 @@ const Categories = ({ categoryType }) => {
   useEffect(() => {
     get(`/genre/${categoryType}/list`)
       .then(res => {
-        console.log('categories', res)
         setCategories(res.data.genres)
       })
       .catch(error => console.error(error))

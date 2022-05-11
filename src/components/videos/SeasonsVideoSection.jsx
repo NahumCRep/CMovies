@@ -33,7 +33,6 @@ const SeasonsVideoSection = ({ tvID, tvSeasons }) => {
     const getSeason = (seasonNumber) => {
         get(`/tv/${tvID}/season/${seasonNumber}`)
             .then(res => {
-                console.log('season', res)
                 setSeason(res.data)
                 setCurrentSeasonNumber(seasonNumber)
                 getEpisodeVideos(seasonNumber, 1)
@@ -44,7 +43,6 @@ const SeasonsVideoSection = ({ tvID, tvSeasons }) => {
     const getEpisodeVideos = (seasonNumber, espisodeNumber) => {
         get(`/tv/${tvID}/season/${seasonNumber}/episode/${espisodeNumber}`, '&append_to_response=videos')
             .then(res => {
-                console.log('episode', res)
                 setEpisode(res.data)
                 setVideoID(res.data.videos?.results[0]?.key)
                 setVideoTitle(res.data.videos?.results[0]?.name)

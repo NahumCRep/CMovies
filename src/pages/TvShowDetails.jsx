@@ -11,7 +11,6 @@ const TvShowDetails = () => {
   useEffect(() => {
     get(`/tv/${id}`,'&append_to_response=credits')
       .then(res => {
-        console.log(res)
         setTvShow(res.data)
       })
       .catch(error => console.log(error))

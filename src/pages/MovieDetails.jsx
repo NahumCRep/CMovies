@@ -14,7 +14,6 @@ const MovieDetails = () => {
   useEffect(() => {
     get(`/movie/${id}`, '&append_to_response=videos,credits')
       .then(res => {
-        console.log(res.data)
         setMovie(res.data)
         setVideoID(res.data.videos.results[0].key)
         setVideoTitle(res.data.videos.results[0].name)

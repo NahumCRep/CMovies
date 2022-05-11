@@ -15,7 +15,6 @@ const Home = () => {
   useEffect(() => {
     getListLimit('/movie/popular', 4)
       .then(res => {
-        console.log(res)
         setSliderMovies(res)
       })
       .catch(error => console.error(error))

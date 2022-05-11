@@ -5,12 +5,9 @@ import {MdArrowForwardIos, MdArrowBackIos} from 'react-icons/md'
 
 const Slider = ({slideItems ,autoPlay }) => {
   const [sliderLength, setSliderLength] = useState(slideItems.length);
-  const [currentSlider, setCurrentSlider] = useState(1);
   const slider = useRef(null)
 
   useEffect(() => {
-    // let sliderAmount = slider.current.children.length;
-    // setSliderLength(slideItems.length);
     if (autoPlay) {
       const autoPlaySlider = setInterval(() => {
         sliderNext()
@@ -22,12 +19,7 @@ const Slider = ({slideItems ,autoPlay }) => {
 
   const sliderNext = () => {
     if (slider != null) {
-      if (sliderLength > 0) {
-        // currentSlider >= sliderLength
-        //   ? setCurrentSlider(1)
-        //   : setCurrentSlider(currentSlider + 1);
-
-        // con animacion de slider ..................................   
+      if (sliderLength > 0) {  
         const firstSlide = slider.current.children[0];
         const slideLength = slider.current.children[0].offsetWidth;
         slider.current.style.transition = `500ms ease-out all`;
@@ -48,10 +40,6 @@ const Slider = ({slideItems ,autoPlay }) => {
 
   const sliderPrev = () => {
     if (slider.current.children.length > 0) {
-      // currentSlider <= 1
-      //   ? setCurrentSlider(sliderLength)
-      //   : setCurrentSlider(currentSlider - 1);
-
       const index = slider.current.children.length - 1;
       const lastSlide = slider.current.children[index];
       slider.current.insertBefore(lastSlide, slider.current.firstChild);

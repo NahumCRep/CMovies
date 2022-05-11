@@ -22,7 +22,6 @@ const Movies = () => {
   const handleApiCall = (mainUrl, aditionalQuery) => {
     get(mainUrl, aditionalQuery)
         .then(res => {
-          console.log('searched results', res)
           setMoviesList(res.data.results)
           setTotalResultPages(res.data.total_pages)
         })

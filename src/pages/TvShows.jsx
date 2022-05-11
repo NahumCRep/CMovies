@@ -21,7 +21,6 @@ const TvShows = () => {
   const handleApiCall = (mainUrl, aditionalQuery) => {
     get(mainUrl, aditionalQuery)
         .then(res => {
-          console.log('searched results', res)
           setTvShowList(res.data.results)
           setTotalResultPages(res.data.total_pages)
         })
