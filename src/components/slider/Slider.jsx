@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
 import style from '../../css/slider.module.css'
-import { mockup } from '../../assets/mockup'
 import SliderItem from './SliderItem'
 import {MdArrowForwardIos, MdArrowBackIos} from 'react-icons/md'
 
