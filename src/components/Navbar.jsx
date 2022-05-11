@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import style from '../css/navbar.module.css'
 import { Link } from 'react-router-dom'
 import { FaTimes, FaBars } from 'react-icons/fa'
@@ -6,6 +7,7 @@ import { FaTimes, FaBars } from 'react-icons/fa'
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false)
   const [showNavBg, setShowNavBg] = useState(false)
+  const location = useLocation()
   
   const handleWindowValue = () => {
     if(window.scrollY > 50){ 
@@ -22,6 +24,10 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleWindowValue)
     }
   }, [])
+
+  useEffect(()=>{
+    setIsNavOpen(false)
+  },[location])
 
   return (
     <nav className={`${style.navbar} ${showNavBg ? style.navbar__background : ''}`}>
