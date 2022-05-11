@@ -8,7 +8,7 @@ const NotFound = () => {
   return (
     <div className={style.not_found__container}>
         <div className={style.not_found__content}>
-            <img src={img404} alt='not found image' className={style.not_found__img} />
+            <img src={img404} alt='not found svg' className={style.not_found__img} />
             <h1>404</h1>
             <p>Page Not Found</p>
             <Link to={'/'}>
@@ -16,7 +16,6 @@ const NotFound = () => {
               Go Home
             </Link>
         </div>
-        
     </div>
   )
 }

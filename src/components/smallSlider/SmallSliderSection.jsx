@@ -9,16 +9,16 @@ import Spinner from '../Spinner'
 const SmallSliderSection = ({type, tag, itemsLimit }) => {
     const [popularList, setPopularList] = useState([])
     useEffect(() => {
-        getListLimit(`/trending/${type == 'movie' ? 'movie':'tv'}/week`, itemsLimit)
+        getListLimit(`/trending/${type === 'movie' ? 'movie':'tv'}/week`, itemsLimit)
             .then(res => {
                 setPopularList(res)
             })
             .catch(error => console.error(error))
-    }, [])
+    }, [type, itemsLimit])
 
     return (
         <section className={style.popular_section}>
-            <h1>{type == 'movie' ? 'Movies' : 'Tv Shows'} <span><TiStarburst /> {tag}</span></h1>
+            <h1>{type === 'movie' ? 'Movies' : 'Tv Shows'} <span><TiStarburst /> {tag}</span></h1>
             <CardSlider>    
                 {
                     popularList 

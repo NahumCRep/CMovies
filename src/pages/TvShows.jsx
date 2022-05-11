@@ -35,7 +35,7 @@ const TvShows = () => {
     } else {
       handleApiCall(`/tv/popular`,`&page=${page ? page : 1}`)
     }
-  }, [searchParams, location])
+  }, [searchValue, categoryValue, page, location])
 
   return (
     <DefaultPage pageType={'tv'}>

@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom'
 const SliderCard = ({itemData, itemType}) => {
   return (
     <article className={style.popularcard}>
-        <img src={`${backdropURL}${itemData.backdrop_path}`} className={style.popularcard__img} /> 
+        <img src={`${backdropURL}${itemData.backdrop_path}`} className={style.popularcard__img} alt={itemType === 'movie' ? itemData.title : itemData.name} /> 
         <div className={style.popularcard__title}>
-            <Link to={itemType == 'movie' ? `/movie/${itemData.id}` : `/tvshow/${itemData.id}`}>
-              {itemType == 'movie' ? itemData.title : itemData.name}
+            <Link to={itemType === 'movie' ? `/movie/${itemData.id}` : `/tvshow/${itemData.id}`}>
+              {itemType === 'movie' ? itemData.title : itemData.name}
             </Link>
         </div>
     </article>

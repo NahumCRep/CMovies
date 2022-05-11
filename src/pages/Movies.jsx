@@ -11,7 +11,6 @@ import { get } from '../api'
 const Movies = () => {
   const [moviesList, setMoviesList] = useState([])
   const [searchParams] = useSearchParams()
-  // const [currentPageNumber, setCurrentPageNumber] = useState(1)
   const [totalResultPages, setTotalResultPages] = useState(1)
 
   const {page} = useParams()
@@ -36,7 +35,7 @@ const Movies = () => {
     } else {
       handleApiCall(`/movie/popular`,`&page=${page ? page : 1}`)
     }
-  }, [searchParams, location.pathname])
+  }, [searchValue, categoryValue, page, location.pathname])
 
   return (
     <DefaultPage pageType={'movie'}>

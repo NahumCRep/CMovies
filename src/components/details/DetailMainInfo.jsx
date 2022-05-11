@@ -11,7 +11,7 @@ const DetailMainInfo = ({ info, type }) => {
   return (
     <>
       <MotionH1 classAsigned={style.detail__info_title} delayValue={'1.5'}>
-        {type == 'movie' ? info.title : info.name}
+        {type === 'movie' ? info.title : info.name}
       </MotionH1>
 
       <MotionParagraph classAsigned={style.detail__info_overview} delayValue={'2'}>
@@ -34,7 +34,7 @@ const DetailMainInfo = ({ info, type }) => {
           )
         }
         <div className={style.detail__info_block}>
-          <p>{type == 'movie' ? 'Duration:' : 'Espisode duration:'}</p>
+          <p>{type === 'movie' ? 'Duration:' : 'Espisode duration:'}</p>
           {
             info.episode_run_time
               ? <Duration timeInMinutes={info.episode_run_time[0]} />
@@ -47,7 +47,7 @@ const DetailMainInfo = ({ info, type }) => {
             {
               info.genres.map((genre, i) => {
                 return (
-                  i == 0 ? genre.name : `, ${genre.name}`
+                  i === 0 ? genre.name : `, ${genre.name}`
                 )
               })
             }
@@ -60,7 +60,7 @@ const DetailMainInfo = ({ info, type }) => {
         <div className={style.detail__info_block}>
           <p>Year:</p>
           {
-            type == 'movie'
+            type === 'movie'
               ? <p>{new Date(info.release_date).getFullYear()}</p>
               : <p>{new Date(info.first_air_date).getFullYear()}</p>
           }
@@ -71,7 +71,7 @@ const DetailMainInfo = ({ info, type }) => {
               <span>Cast:</span>
               {
                 info.credits.cast.slice(0,6).map((castMember, i) => {
-                  return i == 0 ? castMember.name : `, ${castMember.name}`
+                  return i === 0 ? castMember.name : `, ${castMember.name}`
                 })
               }
             </p>
@@ -80,7 +80,7 @@ const DetailMainInfo = ({ info, type }) => {
 
       </MotionDiv>
       <MotionButton classAsigned={style.detail__info_button} delayValue={'3'} >
-        <a href={info.homepage} className={style.detail__info_button_link} target='_blank'>
+        <a href={info.homepage} className={style.detail__info_button_link} target='_blank' rel="noreferrer">
           <BiHomeCircle />
           home page
         </a>

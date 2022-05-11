@@ -8,17 +8,17 @@ const Similars = ({showID, type, itemsLimit}) => {
   const [similarList, setSimilarList] = useState([])
 
   useEffect(()=>{
-    getListLimit(`/${type == 'movie' ? 'movie': 'tv' }/${showID}/similar`, itemsLimit)
+    getListLimit(`/${type === 'movie' ? 'movie': 'tv' }/${showID}/similar`, itemsLimit)
     .then(res => {
         setSimilarList(res)
     })
     .catch(error => console.log(error))
-  },[])
+  },[type, showID, itemsLimit])
 
   return (
     <div className={style.similar__container}>
       <h1 className={style.similar__title}>
-        { type == 'movie' ? 'Similar Movies' : 'Similar TV Shows'}
+        { type === 'movie' ? 'Similar Movies' : 'Similar TV Shows'}
       </h1>
       {
         similarList 

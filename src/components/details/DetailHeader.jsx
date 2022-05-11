@@ -14,8 +14,8 @@ const DetailHeader = ({movie, type}) => {
                     movie.backdrop_path
                         ? (
                             movie.backdrop_path !== null
-                            ? <img src={backdropURL + movie.backdrop_path} alt={type == 'movie' ? movie.title : movie.name} />
-                            : <img src={defaultBackdrop} alt={type == 'movie' ? movie.title : movie.name} />
+                            ? <img src={backdropURL + movie.backdrop_path} alt={type === 'movie' ? movie.title : movie.name} />
+                            : <img src={defaultBackdrop} alt={type === 'movie' ? movie.title : movie.name} />
                         )
                         : <Spinner />
                 }
@@ -25,7 +25,7 @@ const DetailHeader = ({movie, type}) => {
                     {
                         movie.poster_path && (
                             <MotionDiv classAsigned={style.detail__poster_img}>
-                                <img src={posterURL500 + movie.poster_path} alt={type == 'movie' ? movie.title : movie.name} />
+                                <img src={posterURL500 + movie.poster_path} alt={type === 'movie' ? movie.title : movie.name} />
                             </MotionDiv>
                         )
                     }

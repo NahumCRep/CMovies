@@ -8,7 +8,7 @@ import defaultImage from '../../assets/images/defaultBackdrop.jpg'
 const Card = ({ cardData, cardType }) => {
   return (
     <div className={style.card}>
-      <Link to={`/${cardType == 'movie' ? 'movie':'tvshow'}/${cardData.id}`}>
+      <Link to={`/${cardType === 'movie' ? 'movie':'tvshow'}/${cardData.id}`}>
         <figure>
           {
             cardData.poster_path

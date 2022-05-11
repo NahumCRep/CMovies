@@ -16,11 +16,11 @@ const Search = ({ searchType }) => {
 
   const searchShow = () => {
     let page = ''
-    searchType == 'movie'
+    searchType === 'movie'
       ? page = '/movies'
       : page = '/tvshows'
 
-    if (searchInputRef.current.value != '') {
+    if (searchInputRef.current.value !== '') {
       navigate(`${page}?s=${searchInputRef.current.value}`)
       searchInputRef.current.value = ''
     }
@@ -29,7 +29,7 @@ const Search = ({ searchType }) => {
   return (
     <div className={style.search__container}>
       <div className={style.search__input_div}>
-        <input ref={searchInputRef} onKeyDown={handleKeyEnter} className={style.search__input} type='text' placeholder={searchType == 'movie' ? 'search movie...' : 'search tv show...'} />
+        <input ref={searchInputRef} onKeyDown={handleKeyEnter} className={style.search__input} type='text' placeholder={searchType === 'movie' ? 'search movie...' : 'search tv show...'} />
         <button onClick={() => searchShow()} className={style.search__btn}> <FaSearch size={20} /> </button>
       </div>
       <Categories categoryType={searchType} />
