@@ -12,7 +12,7 @@ const SliderItem = ({slide}) => {
          <div className={style.slide__content}>
              <p className={style.slide__title}>{slide.title}</p>
              <p className={style.slide__overview}>{slide.overview}</p>
-             <button className={style.slide__content_button}><BiDetail size={25} /> details</button>
+             <Link to={`/movie/${slide.id}`} className={style.slide__content_button}><BiDetail size={25} /> details</Link>
          </div>
     </div>
   )

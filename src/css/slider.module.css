@@ -124,6 +124,7 @@
     height: 50px;
     background-color: var(--dark);
     outline: none;
+    text-decoration: none;
     border: 2px solid var(--teal);
     cursor: pointer;
     font-family: var(--fredoka);
